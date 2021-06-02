@@ -16,9 +16,9 @@ namespace VaccinationAppointments
         static void Main(string[] args)
         {
             driver.Navigate().GoToUrl("https://emvolio.gov.gr/app#/CovidVaccine/appointmentSearch");
+            WaitUntilLoaded();
             List<string> credentials = AskForCredentials();
             Login(credentials);
-            WaitUntilLoaded();
         }
 
         static void WaitUntilLoaded()
@@ -46,6 +46,9 @@ namespace VaccinationAppointments
             driver.FindElement(By.Name("j_username")).SendKeys(credentials[0]);
             driver.FindElement(By.Name("j_password")).SendKeys(credentials[1]);
             driver.FindElement(By.Id("btn-login-submit")).Click();
+            WaitUntilLoaded();
+            driver.FindElement(By.Id("btn-submit")).Click();
+            WaitUntilLoaded();
         }
     }
 }
