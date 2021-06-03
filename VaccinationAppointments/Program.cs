@@ -21,12 +21,12 @@ namespace VaccinationAppointments
         static int zipcode;
         static bool found;
         static int retryPeriod;
-        static int maxTries = 10;
+        static int maxAttempts = 10;
 
         static void Main(string[] args)
         {
             found = false;
-            int tries = 0;
+            int attempts = 0;
             driver.Navigate().GoToUrl("https://emvolio.gov.gr/app#/CovidVaccine/appointmentSearch");
             Console.WriteLine("Please wait...");
             WaitUntilLoaded();
@@ -34,12 +34,12 @@ namespace VaccinationAppointments
             GetZipCodeAndProceed();
             GetAvailableVaccinationCenters();
             retryPeriod = 60;
+            Console.WriteLine($"I\'ll now start searching for appointments. I\'ll make {maxAttempts} attempts.");
             while (!found)
             {
-                Console.WriteLine($"I\'ll now start searching for appointments. I\'ll make {maxTries} tries.");
-                tries++;
+                attempts++;
                 FindAvailableAppointment();
-                if (tries == maxTries)
+                if (attempts == maxAttempts)
                 {
                     Console.WriteLine($"Timed out. No available appointments found near the area with zipcode {zipcode}. Exiting...");
                     break;
