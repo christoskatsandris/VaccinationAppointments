@@ -12,4 +12,4 @@ Do not click anything at the browser window (unless it finds an available appoin
 
 Disclaimer: No personal information is stored.
 
-In case of an unhandled exception (crash), don't worry! You can safely discard it and run the program once again!
+In case of an unhandled exception (crash), don't worry! You can safely discard it and run the program once again! Of course, I'll be happy to hear from you, so as to correct it as fast as possible!
