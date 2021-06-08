@@ -8,8 +8,11 @@ If it finds an available appointment, a sound will play repetitively to inform y
 Google Chrome, version 91
 
 ## Note
-Do not click anything at the browser window (unless it finds an available appointment, so make sure you're fast to reserve it!). The program will do everything for you. Just enter your TaxisNet credentials **in the console window** to log in.
+- Do not click anything at the browser window (unless it finds an available appointment, so make sure you're fast to reserve it!). The program will do everything for you. Just enter your TaxisNet credentials **in the console window** to log in.
+- In case of an unhandled exception (crash), don't worry! You can safely discard it and run the program once again! Of course, I'll be happy to hear from you, so as to correct it as fast as possible!
+- The automated web driver will log some information in the console window that might confuse you. You can safely discard it.
 
-Disclaimer: No personal information is stored.
+## Disclaimer
+No personal information is stored.
 
-In case of an unhandled exception (crash), don't worry! You can safely discard it and run the program once again! Of course, I'll be happy to hear from you, so as to correct it as fast as possible!
+
