@@ -41,7 +41,7 @@ namespace VaccinationAppointments
                 FindAvailableAppointment();
                 if (attempts == maxAttempts)
                 {
-                    Console.WriteLine($"Timed out. No available appointments found near the area with zipcode {zipcode}. Exiting...");
+                    Console.Write($"Timed out. No available appointments found near the area with zipcode {zipcode}.");
                     break;
                 }
                 if (!found)
@@ -50,6 +50,8 @@ namespace VaccinationAppointments
                     Console.WriteLine("Retrying...");
                 }
             }
+            Console.WriteLine("Exiting...");
+            driver.Quit();
         }
 
         static void WaitUntilLoaded()
@@ -138,6 +140,7 @@ namespace VaccinationAppointments
                 activeElement.SendKeys(Keys.ArrowUp);
                 Thread.Sleep(100);
             }
+            activeElement.SendKeys(Keys.Return);
             Thread.Sleep(5000);
 
             // Search
@@ -169,6 +172,8 @@ namespace VaccinationAppointments
                 activeElement.SendKeys(Keys.Return);
                 Thread.Sleep(5000);
             }
+
+            // Not Found actions
             if (!found)
             {
                 Console.WriteLine($"No available appointments found near the area with zipcode {zipcode}.");
